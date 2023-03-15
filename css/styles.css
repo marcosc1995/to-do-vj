@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(56, 56, 56);
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    background-color: rgb(181, 181, 181)
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 500px;
+}
+li:hover{
+    background-color: rgba(169, 169, 169, 0.638);
+}
+li p {
+    font-size: 35px;
+    margin: 5px;
+}
+li div{
+    font-size: 30px;
+    border-radius: 25%;
+}
+li div:hover{
+    background-color: rgb(67, 12, 12);
+}
+
+.end{
+    background-color: red;
+    text-decoration: line-through;
+
+}
+.btn{
+    height: 30px;
+    width: 30px;
+    background-color: red;
+}
