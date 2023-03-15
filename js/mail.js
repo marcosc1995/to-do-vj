@@ -24,6 +24,13 @@ function printList(item) {
   const arr = getStorange(item);
   for (let i = 0; i < arr.length; i++) {
     const listElement = document.createElement("li");
+    if (arr[i].status == 'active') {
+      listElement.classList = 'unDone'
+    }
+    listElement.addEventListener('click', ()=>{
+      listElement.classList = 'done'
+      arr[i].status = 'done'
+    })
     const btnDel = document.createElement("div");
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
@@ -37,7 +44,7 @@ function printList(item) {
     });
     const note = document.createElement("p");
     note.textContent = arr[i].note;
-    note.classList = "active";
+
     listElement.append(note, btnDel);
     list.append(listElement);
     console.log(listElement);

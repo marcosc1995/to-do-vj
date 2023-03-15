@@ -4,7 +4,10 @@ body{
     padding: 0;
 }
 header{
+    height: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(181, 181, 181)
 }
 main{
@@ -14,12 +17,16 @@ main{
     align-items: center;
     width: 100vw;
 }
+ul{
+    padding: 0;
+}
 li{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    min-width: 500px;
+    min-width: 300px;
+    padding: 5px;
 }
 li:hover{
     background-color: rgba(169, 169, 169, 0.638);
@@ -40,6 +47,15 @@ li div:hover{
     background-color: red;
     text-decoration: line-through;
 
+}
+.done{
+    background-color: rgb(34, 34, 34);
+    text-decoration: line-through;
+    border: 1px solid grey;
+}
+.unDone{
+    background-color: rgba(37, 94, 37, 0.658);
+    border: 1px solid grey;
 }
 .btn{
     height: 30px;
