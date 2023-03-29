@@ -24,13 +24,13 @@ function printList(item) {
   const arr = getStorange(item);
   for (let i = 0; i < arr.length; i++) {
     const listElement = document.createElement("li");
-    if (arr[i].status == 'active') {
-      listElement.classList = 'unDone'
+    if (arr[i].status == "active") {
+      listElement.classList = "unDone";
     }
-    listElement.addEventListener('click', ()=>{
-      listElement.classList.toggle('done')
-      arr[i].status = 'done'
-    })
+    listElement.addEventListener("click", () => {
+      listElement.classList.toggle("done");
+      arr[i].status = "done";
+    });
     const btnDel = document.createElement("div");
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
@@ -64,7 +64,18 @@ function printList(item) {
     arrList = getStorange("list");
     const nota = { note: inputTexto.value.trim() };
     //tests
-    arrList.push(nota);
+    //console.log(arrList.filter((element) => element.note == nota.note))
+    const filtered = arrList.filter((element) => element.note == nota.note)
+    //console.log(filtered)
+    if (filtered == false) {
+      //console.log(filtered)
+      arrList.push(nota);
+      
+    } else {
+      alert('Nota repetida')
+      console.log("nota repetida");
+      //arrList.push(nota);
+    }
     saveStorage("list", arrList);
     printList("list");
     inputTexto.value = "";
