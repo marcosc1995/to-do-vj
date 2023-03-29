@@ -26,10 +26,23 @@ function printList(item) {
     const listElement = document.createElement("li");
     if (arr[i].status == "active") {
       listElement.classList = "unDone";
+    } else {
+      listElement.classList = "done";
     }
-    listElement.addEventListener("click", () => {
-      listElement.classList.toggle("done");
-      arr[i].status = "done";
+    const note = document.createElement("p");
+    note.addEventListener("click", () => {
+      if (arr[i].status == "active") {
+        listElement.classList.toggle("done");
+        arr[i].status = "done";
+      } else {
+        listElement.classList.toggle("done");
+        arr[i].status = "active";
+      }
+
+      console.log(arr[i]);
+      saveStorage("list", arr);
+      arrList = arr;
+      printList(item);
     });
     const btnDel = document.createElement("div");
     btnDel.classList = "btn";
@@ -41,8 +54,9 @@ function printList(item) {
 
       list.removeChild(e.target.parentElement);
       saveStorage("list", result);
+      printList(item);
     });
-    const note = document.createElement("p");
+
     note.textContent = arr[i].note;
 
     listElement.append(note, btnDel);
@@ -62,17 +76,16 @@ function printList(item) {
   printList("list");
   inputBtn.addEventListener("click", () => {
     arrList = getStorange("list");
-    const nota = { note: inputTexto.value.trim() };
+    const nota = { note: inputTexto.value.trim(), status: "active" };
     //tests
     //console.log(arrList.filter((element) => element.note == nota.note))
-    const filtered = arrList.filter((element) => element.note == nota.note)
+    const filtered = arrList.filter((element) => element.note == nota.note);
     //console.log(filtered)
     if (filtered == false) {
       //console.log(filtered)
       arrList.push(nota);
-      
     } else {
-      alert('Nota repetida')
+      alert("Nota repetida");
       console.log("nota repetida");
       //arrList.push(nota);
     }
