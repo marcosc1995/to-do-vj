@@ -28,7 +28,7 @@ function printList(item) {
       listElement.classList = 'unDone'
     }
     listElement.addEventListener('click', ()=>{
-      listElement.classList = 'done'
+      listElement.classList.toggle('done')
       arr[i].status = 'done'
     })
     const btnDel = document.createElement("div");
