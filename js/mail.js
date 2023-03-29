@@ -1,6 +1,7 @@
 const list = document.getElementById("list");
 const inputTexto = document.getElementById("inputTexto");
 const inputBtn = document.getElementById("inputBtn");
+const form = document.getElementById("form");
 
 let arrList = [];
 
@@ -74,7 +75,9 @@ function printList(item) {
   // const list = getStorange('list')
   // console.log(list);
   printList("list");
-  inputBtn.addEventListener("click", () => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
     arrList = getStorange("list");
     const nota = { note: inputTexto.value.trim(), status: "active" };
     //tests
