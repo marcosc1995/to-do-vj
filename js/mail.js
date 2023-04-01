@@ -46,7 +46,7 @@ function printList(item) {
       printList(item);
     });
     const btnDel = document.createElement("div");
-    btnDel.textContent = 'X'
+    
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
       console.log(e);
@@ -58,6 +58,7 @@ function printList(item) {
       saveStorage("list", result);
       printList(item);
     });
+    //btnDel.textContent = 'x'
 
     note.textContent = arr[i].note;
 

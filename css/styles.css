@@ -65,15 +65,18 @@ li div{
     border: 1px solid grey;
 }
 .btn{
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
     background-color: rgb(158, 158, 158);
     display: flex;
     justify-content: center;
     align-items: center ;    
     font-size: 15px; 
-    cursor: pointer;   
+    cursor: pointer;
+    background-image: url(../x.png);
+    background-position: center;
+    background-size: cover;   
 }
 .btn:hover{
     background-color: rgb(223, 87, 87);
