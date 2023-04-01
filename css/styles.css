@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(20, 20, 20);
     margin: 0;
     padding: 0;
 }
@@ -12,7 +12,7 @@ header{
 }
 h1{
     font-family: sans-serif;
-    color: rgb(20, 20, 20);
+    color: rgb(214, 214, 214);
 }
 main{
     display: flex;
@@ -35,12 +35,13 @@ li{
     border-radius: 5px;
 }
 li:hover{
-    background-color: rgba(169, 169, 169, 0.638);
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.61);
+    background-color: rgba(211, 211, 211, 0.638);
+    box-shadow: 3px 2px rgba(123, 247, 119, 0.918);
 }
 li p {
     font-size: 35px;
     margin: 5px;
+    cursor: pointer;
 }
 li div{
     font-size: 30px;
@@ -58,7 +59,7 @@ li div{
 .done{
     background-color: rgb(34, 34, 34);
     text-decoration: line-through;
-    border: 1px solid grey;
+    border: 1px solid rgb(36, 36, 36);
 }
 .unDone{
     background-color: rgba(112, 112, 112, 0.658);
@@ -68,7 +69,9 @@ li div{
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: rgb(158, 158, 158);
+    border: 1px solid black;
+    opacity: 25%;
+    background-color: rgb(117, 117, 117);
     display: flex;
     justify-content: center;
     align-items: center ;    
@@ -80,4 +83,5 @@ li div{
 }
 .btn:hover{
     background-color: rgb(223, 87, 87);
+    opacity: 100%;
 }
