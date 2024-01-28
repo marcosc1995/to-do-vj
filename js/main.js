@@ -49,20 +49,26 @@ function printList(item) {
   list.innerHTML = "";
   const arr = getStorange(item);
   for (let i = 0; i < arr.length; i++) {
-    const listElement = document.createElement("li");
+    const listItem = document.createElement("li");
+    listItem.classList.add("list-item")
+    // TOGGLE
     if (arr[i].status == "active") {
-      listElement.classList = "unDone";
+      listItem.classList.add("unDone") ;
+      listItem.classList.remove("done") ;
+
     } else {
-      listElement.classList = "done";
+      listItem.classList.add("done") ;
+      listItem.classList.remove("unDone") ;
+      
     }
     const note = document.createElement("div");
     note.classList.add("note-text");
     note.addEventListener("click", () => {
       if (arr[i].status == "active") {
-        listElement.classList.toggle("done");
+        listItem.classList.toggle("done");
         arr[i].status = "done";
       } else {
-        listElement.classList.toggle("done");
+        listItem.classList.toggle("done");
         arr[i].status = "active";
       }
 
@@ -71,9 +77,14 @@ function printList(item) {
       arrList = arr;
       printList(item);
     });
-    // DELETE BUTTON OF THE LIST ITEM
-    const btnDel = document.createElement('button');
-    btnDel.textContent = 'Close'
+    // DELETE BUTTON OF THE LIST ITEMS
+    const btnDel = document.createElement("div");
+    const btnDelContent = document.createElement('div')
+    btnDelContent.textContent = 'X'
+    btnDelContent.style.fontSize = '15px'
+    btnDelContent.style.zIndex = '1'
+    btnDel.append(btnDelContent)
+
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
       console.log(e);
@@ -89,9 +100,9 @@ function printList(item) {
 
     note.textContent = arr[i].note;
 
-    listElement.append(note, btnDel);
-    list.append(listElement);
-    console.log(listElement);
+    listItem.append(note, btnDel);
+    list.append(listItem);
+    console.log(listItem);
   }
 }
 //LLAMADA A LA FUNCION DE IMPRIMIR LISTA
