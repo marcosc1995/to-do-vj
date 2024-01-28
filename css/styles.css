@@ -53,28 +53,11 @@ li:hover {
   display: flex;
   word-break: break-all;
   user-select: none;
-  color: #DAE2DF;
+  color: #dae2df;
 
   /* transition-duration: 0.5s; */
 }
-li div {
-  position: absolute;
-  right: 5px;
-  font-size: 30px;
-  border-radius: 25%;
-}
-/* Texto de prueba para la modificacion del branch */
-/* Otro texto de pueba para seguir probando el branch */
-/* Otro texto de prueba despues del merge */
-/* li div:hover{
-    background-color: rgb(67, 12, 12);
-} */
 
-/* .end{
-    background-color: red;
-    text-decoration: line-through;
-
-} */
 .done {
   background-color: #2a2a2a;
   /* border: 1px solid #232323; */
@@ -83,26 +66,29 @@ li div {
   background-color: #333333;
 }
 .btn {
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   /* border-radius: 50%; */
   /* border: 1px solid black; */
-  opacity: 25%;
+  opacity: 5%;
   /* background-color: rgb(117, 117, 117); */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
   cursor: pointer;
-  /* background-image: url(../x.png);
+  background-image: url(../x.png);
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
   transition-duration: 0.4s;
-  z-index: 2;
+  position: absolute;
+  right: 5px;
+  font-size: 30px;
+  border-radius: 50%;
 }
 .btn:hover {
-  background-color: rgb(223, 87, 87);
-  opacity: 100%;
+  background-color: #c52233;
+  opacity: 80%;
 }
 /* FORM */
 #formAddContainer {
@@ -176,7 +162,7 @@ li div {
   border: none;
   background-color: #333333;
   transition-duration: 0.2s;
-  color: #DAE2DF;
+  color: #dae2df;
   cursor: pointer;
 }
 #formTrigger:hover {

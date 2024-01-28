@@ -79,11 +79,11 @@ function printList(item) {
     });
     // DELETE BUTTON OF THE LIST ITEMS
     const btnDel = document.createElement("div");
-    const btnDelContent = document.createElement('div')
-    btnDelContent.textContent = 'X'
-    btnDelContent.style.fontSize = '15px'
-    btnDelContent.style.zIndex = '1'
-    btnDel.append(btnDelContent)
+    // const btnDelContent = document.createElement('div')
+    // btnDelContent.textContent = 'X'
+    // btnDelContent.style.fontSize = '15px'
+    // btnDelContent.style.zIndex = '1'
+    // btnDel.append(btnDelContent)
 
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
