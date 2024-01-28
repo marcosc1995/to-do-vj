@@ -2,8 +2,25 @@ const list = document.getElementById("list");
 const inputTexto = document.getElementById("inputTexto");
 const inputBtn = document.getElementById("inputBtn");
 const form = document.getElementById("form");
-
+const formTrigger = document.getElementById("formTrigger");
+const formAddContainer = document.getElementById("formAddContainer");
+formAddContainer.style.visibility = "hidden"; // need to read the property in the DOM
+const formCloseBtn = document.getElementById("formCloseBtn");
 let arrList = [];
+
+// GENERAL FUNCTIONS
+function toggleVisibility(element) {
+  if (element.style.visibility === "hidden") {
+    console.log("Test toggle function when is not visible");
+    element.style.visibility = "visible";
+    element.style.opacity = '100%'
+  } else {
+    console.log("Test toggle function when IS visible");
+    element.style.visibility = "hidden";
+    element.style.opacity = '0'
+  }
+}
+//-------------------------------------------------------------
 
 function saveStorage(item, newArr) {
   localStorage.setItem(item, JSON.stringify(newArr));
@@ -18,7 +35,15 @@ function getStorange(item) {
     return resultLocalStonrange;
   }
 }
-
+//FORM TRIGGER & CLOSE
+formTrigger.addEventListener("click", () => {
+  console.log("event listened");
+  toggleVisibility(formAddContainer);
+});
+//FORM CLOSE
+formCloseBtn.addEventListener("click", () => {
+  toggleVisibility(formAddContainer);
+});
 //FUNCION PARA IMPRIMIR LISTA
 function printList(item) {
   list.innerHTML = "";
@@ -30,7 +55,8 @@ function printList(item) {
     } else {
       listElement.classList = "done";
     }
-    const note = document.createElement("p");
+    const note = document.createElement("div");
+    note.classList.add("note-text");
     note.addEventListener("click", () => {
       if (arr[i].status == "active") {
         listElement.classList.toggle("done");
@@ -45,8 +71,9 @@ function printList(item) {
       arrList = arr;
       printList(item);
     });
+    // DELETE BUTTON OF THE LIST ITEMS
     const btnDel = document.createElement("div");
-    
+
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
       console.log(e);
@@ -79,6 +106,7 @@ function printList(item) {
   printList("list");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    toggleVisibility(formAddContainer);
 
     arrList = getStorange("list");
     const nota = { note: inputTexto.value.trim(), status: "active" };
