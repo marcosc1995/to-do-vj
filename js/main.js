@@ -71,9 +71,9 @@ function printList(item) {
       arrList = arr;
       printList(item);
     });
-    // DELETE BUTTON OF THE LIST ITEM
-    const btnDel = document.createElement('button');
-    btnDel.textContent = 'Close'
+    // DELETE BUTTON OF THE LIST ITEMS
+    const btnDel = document.createElement("div");
+
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
       console.log(e);
