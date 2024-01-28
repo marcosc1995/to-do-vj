@@ -73,7 +73,7 @@ function printList(item) {
     });
     // DELETE BUTTON OF THE LIST ITEM
     const btnDel = document.createElement('button');
-    btnDel.textContent = 'X'
+    btnDel.textContent = 'Close'
     btnDel.classList = "btn";
     btnDel.addEventListener("click", (e) => {
       console.log(e);
