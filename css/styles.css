@@ -118,7 +118,7 @@ li:hover {
   margin-bottom: 25px;
   border: none;
   word-break: break-all;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 #formAddContainer form button {
   background-color: gray;
