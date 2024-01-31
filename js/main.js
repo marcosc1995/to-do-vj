@@ -13,11 +13,21 @@ function toggleVisibility(element) {
   if (element.style.visibility === "hidden") {
     console.log("Test toggle function when is not visible");
     element.style.visibility = "visible";
-    element.style.opacity = '100%'
+    element.style.opacity = "100%";
   } else {
     console.log("Test toggle function when IS visible");
     element.style.visibility = "hidden";
-    element.style.opacity = '0'
+    element.style.opacity = "0";
+  }
+}
+// -----------------------------------------------------------
+function printItems(arr, elementInDom) {
+  elementInDom.innerHTML = "";
+  const listOfItems = arr;
+  for (let i = 0; i < listOfItems.length; i++) {
+    const element = listOfItems[i];
+    const listItem = document.createElement("li");
+    listItem.classList.add("list-item");
   }
 }
 //-------------------------------------------------------------
@@ -50,16 +60,14 @@ function printList(item) {
   const arr = getStorange(item);
   for (let i = 0; i < arr.length; i++) {
     const listItem = document.createElement("li");
-    listItem.classList.add("list-item")
+    listItem.classList.add("list-item");
     // TOGGLE
     if (arr[i].status == "active") {
-      listItem.classList.add("unDone") ;
-      listItem.classList.remove("done") ;
-
+      listItem.classList.add("unDone");
+      listItem.classList.remove("done");
     } else {
-      listItem.classList.add("done") ;
-      listItem.classList.remove("unDone") ;
-      
+      listItem.classList.add("done");
+      listItem.classList.remove("unDone");
     }
     const note = document.createElement("div");
     note.classList.add("note-text");
