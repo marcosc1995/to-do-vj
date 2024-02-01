@@ -13,7 +13,7 @@ function toggleVisibility(element) {
   if (element.style.visibility === "hidden") {
     console.log("Test toggle function when is not visible");
     element.style.visibility = "visible";
-    element.style.opacity = "90%";
+    element.style.opacity = "98%";
   } else {
     console.log("Test toggle function when IS visible");
     element.style.visibility = "hidden";
