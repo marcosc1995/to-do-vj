@@ -13,7 +13,7 @@ function toggleVisibility(element) {
   if (element.style.visibility === "hidden") {
     console.log("Test toggle function when is not visible");
     element.style.visibility = "visible";
-    element.style.opacity = "100%";
+    element.style.opacity = "90%";
   } else {
     console.log("Test toggle function when IS visible");
     element.style.visibility = "hidden";
@@ -110,7 +110,7 @@ function printList(item) {
 
     listItem.append(note, btnDel);
     list.append(listItem);
-    console.log(listItem);
+    // console.log(listItem);
   }
 }
 //LLAMADA A LA FUNCION DE IMPRIMIR LISTA
@@ -118,7 +118,7 @@ function printList(item) {
 //FUNCION MANEJO DEL INPUT DE NOTAS
 (function manageInput() {
   arrList = getStorange("list");
-  console.log(arrList, "console de mI");
+  //console.log(arrList, "console de mI");
 
   // const list = getStorange('list')
   // console.log(list);
@@ -133,14 +133,14 @@ function printList(item) {
     //console.log(arrList.filter((element) => element.note == nota.note))
     const filtered = arrList.filter((element) => element.note == nota.note);
     //console.log(filtered)
-    if (filtered == false) {
-      //console.log(filtered)
+    if ((filtered == false) & (inputTexto.value != "")) {
       arrList.push(nota);
-    } else {
-      alert("Nota repetida");
-      console.log("nota repetida");
-      //arrList.push(nota);
+      //console.log(filtered)
+    } else if (inputTexto.value == "") {
+      alert("Nota Vacia");
+      console.log("nota Vacia");
     }
+
     saveStorage("list", arrList);
     printList("list");
     inputTexto.value = "";
