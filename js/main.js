@@ -139,6 +139,8 @@ function printList(item) {
     } else if (inputTexto.value == "") {
       alert("Nota Vacia");
       console.log("nota Vacia");
+    } else if( filtered !== false){
+      alert('Nota repetida')
     }
 
     saveStorage("list", arrList);

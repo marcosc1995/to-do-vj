@@ -46,10 +46,11 @@ li:hover {
   transition: 0.2s;
 }
 .note-text {
-  font-size: 20px;
+  font-size: 25px;
   /* margin: 5px; */
   cursor: pointer;
   width: 90%;
+  /* height: 100%; */
   display: flex;
   word-break: break-all;
   user-select: none;
