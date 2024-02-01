@@ -46,10 +46,11 @@ li:hover {
   transition: 0.2s;
 }
 .note-text {
-  font-size: 20px;
+  font-size: 25px;
   /* margin: 5px; */
   cursor: pointer;
   width: 90%;
+  /* height: 100%; */
   display: flex;
   word-break: break-all;
   user-select: none;
@@ -57,10 +58,18 @@ li:hover {
 
   /* transition-duration: 0.5s; */
 }
-
+.note-text-done {
+  color: red;
+}
 .done {
   background-color: #2a2a2a;
   /* border: 1px solid #232323; */
+  box-shadow: 0 0 5px #222222;
+}
+.done div {
+  color: rgb(29, 29, 29);
+  text-decoration: line-through;
+  transition-duration: 1s;
 }
 .unDone {
   background-color: #333333;
@@ -102,7 +111,7 @@ li:hover {
   justify-content: center;
   align-items: center;
   opacity: 0%;
-  background-color: rgb(56, 56, 56);
+  background-color: #2a2a2a;
   transition: ease opacity 0.3s;
 }
 
@@ -113,46 +122,60 @@ li:hover {
 #formAddContainer form input {
   display: flex;
   text-align: center;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 400px;
   margin-bottom: 25px;
   border: none;
   word-break: break-all;
   border-radius: 10px;
+  font-size: 30px;  
+  background-color: #646464;
 }
 #formAddContainer form button {
-  background-color: gray;
+  background-color: #333333;
   border: none;
   width: 100px;
   height: 50px;
   margin: auto;
   opacity: 100%;
   transition-duration: 0.3s;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  color: #dae2df;
 }
 #formAddContainer form button:hover {
-  background-color: rgb(110, 110, 253);
-  box-shadow: 0 0 10px rgb(125, 125, 250);
+  background-color: #7d9d6b;
+
+  scale: 1.1;
 }
 #formCloseBtn {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  color: #dae2df;
   display: flex;
-  opacity: 20%;
+  opacity: 80%;
   justify-content: center;
   align-items: center;
-  background-color: grey;
-  border: 1px solid rgb(83, 83, 83);
+  background-color: #333333;
+  /* border: 1px solid rgb(83, 83, 83); */
+  border: none;
   position: absolute;
   top: 50px;
   right: 50px;
   border-radius: 50%;
-  transition-duration: 0.2s;
-  color: rgb(54, 54, 54);
+  transition-duration: 0.1s;
+  /* color: rgb(54, 54, 54); */
+  cursor: pointer;
 }
 #formCloseBtn:hover {
   opacity: 90%;
+  scale: 1.2;
   background-color: rgb(255, 99, 99);
-  box-shadow: 0 0 10px red;
+  /* box-shadow: 0 0 10px rgb(255, 99, 99); */
 }
 #formTrigger {
   height: 50px;
